@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'montserratthin';
+    src: url('../fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+         url('../fonts/montserrat-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+html {
+    background-image: url("../img/index-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h2 {
+    
+    color:beige;
+}
+
+div {
+    border-style: solid;
+    border-color: beige;
+    border-width: thick;
+    margin: 100px;
+    padding: 50px;
+}
+
+p {
+    color: aliceblue;
+    border: coral solid thin;
+    font-family: montserratthin;
+}
