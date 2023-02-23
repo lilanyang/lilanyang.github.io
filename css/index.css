@@ -18,3 +18,24 @@ ul {
     list-style-position: inside;
     list-style-image: url();
 }
+
+@keyframes color-changer {
+    0% {
+        background-color: #4C1F50;
+    }
+    30% {
+        background-color: aqua;
+    }
+    50% {
+        background-color: bisque;
+    }
+    100% {
+        background-color: #4C1F50;
+    }
+}
+
+.anyname {
+    animation-name: color-changer;
+    animation-duration: 5s;
+    animation-iteration-count: 2;
+}

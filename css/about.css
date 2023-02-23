@@ -9,13 +9,11 @@
 
 html {
     background-image: url("../img/index-background.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
 }
 
 h2 {
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:beige;
 }
 
@@ -23,7 +21,7 @@ div {
     border-style: solid;
     border-color: beige;
     border-width: thick;
-    margin: 100px;
+    margin: 50px;
     padding: 50px;
 }
 
@@ -31,4 +29,13 @@ p {
     color: aliceblue;
     border: coral solid thin;
     font-family: montserratthin;
+}
+
+@keyframes example {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2);
+    }
 }
