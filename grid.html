@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Grid</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 10vh 80vh 10vh;
+            grid-template-areas: 
+            "header header header header"
+            "sidebar . main main"
+            "footer footer footer footer";
+        }
+        .item-a{
+            background-color: aquamarine;
+            grid-area: header;
+        }
+        .item-b {
+            background-color: bisque;
+            grid-area: sidebar;
+        }
+        .item-c {
+            background-color: yellow;
+            grid-area: main;
+        }
+        .item-d {
+            background-color: brown;
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item-a">This is a header.</div>
+        <div class="item-b">this is a sidebar.</div>
+        <div class="item-c">This is a main content part.</div>
+        <div class="item-d">This is a footer.</div>
+    </div>
+
+</body>
+</html>

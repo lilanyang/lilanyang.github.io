@@ -1,12 +1,15 @@
 body {
     background-color: brown;
     font-family: "Gill Sans", sans-serif;
-    margin: 100px;
-    padding: 50px;
+
 }
 
 h1, p {
     color: aliceblue;
+}
+
+a {
+    text-decoration: none;
 }
 
 img {
@@ -14,7 +17,7 @@ img {
 }
 
 ul {
-    list-style-type: square;
+    list-style-type: none;
     list-style-position: inside;
     list-style-image: url();
 }
