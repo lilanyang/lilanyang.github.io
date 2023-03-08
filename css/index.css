@@ -4,12 +4,24 @@ body {
 
 }
 
-h1, p {
-    color: aliceblue;
+h1, p, li {
+    color: #f0f8ff;
+}
+
+li {
+    font-size: 3vh;
+}
+
+li a:visited, a {
+    color:yellow;
 }
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    color:aqua;
 }
 
 img {
@@ -18,7 +30,6 @@ img {
 
 ul {
     list-style-type: none;
-    list-style-position: inside;
     list-style-image: url();
 }
 

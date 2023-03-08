@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+    let text = '';
+const data = '{"name":"John", "age":30, "car":null}';
+const items = JSON.parse(data);
+
+for (const key in items) {
+  if (items[key] !== null) {
+    text += key + ': ' + items[key] + '\n';
+  } else {
+    text += key + ': ' + 'N/A' + '\n';
+  }
+}
+
+document.getElementById("demo").innerHTML = text;
+
+    </script>
+
+</head>
+<body>
+    <div id="demo"></div>
+</body>
+</html>
