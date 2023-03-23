@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <script>
+    // Load the JSON file named pokemon.json
     fetch('pokemon.json')
     .then(response => response.json())
     .then(data => {
-        // Get the list element
+        // Access the div element
         const pokedex = document.getElementById('pokedex');
                 
-        // Loop through the data and add each item to the list
+        // Loop through the data and add each item to the div
         data.forEach(item => {
         const div = document.createElement('div');
         const p = document.createElement('p');
@@ -24,12 +25,16 @@
         img.src = "img/" + item.image;
         audio.src = "audio/" + item.audio;
 
+        /* 
+         * Onclick function
+         * whenever a image is clicked
+         * associated audio will be played
+         */
         img.onclick = function() {
             audio.play();
         }
         
-        // Add the link to the list item and the list item to the list
-        
+        // Add the HTML tags to webpage
         div.appendChild(img);
         div.appendChild(p);
         div.appendChild(audio);
