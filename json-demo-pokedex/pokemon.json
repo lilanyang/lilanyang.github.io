@@ -3,12 +3,12 @@
       "id": 1,
       "pokemon": "Bulbasur",
       "image": "bulbasaur.png",
-      "audio": "Bulbasaur.mp3"
+      "audio": "bulbasaur.mp3"
     },
     {
       "id": 25,
       "pokemon": "Pikachu",
       "image": "pikachu.png",
-      "audio": "Pikachu.mp3"
+      "audio": "pikachu.mp3"
     }
   ]
