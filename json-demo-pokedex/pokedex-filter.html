@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script>
+    // Load the JSON file named pokemon.json
+    fetch('pokemon-filter.json')
+    .then(response => response.json())
+    .then(data => {
+        // Access the div element
+        const pokedex = document.getElementById('pokedex');
+                
+        // Loop through the data and add each item to the div
+        data.forEach(item => {
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+        const img = document.createElement('img');
+
+        // Set the text content and href attributes for the link
+        p.textContent = item.id + ' ' + item.pokemon;
+        img.src = "img/" + item.image;
+
+        // Buttons
+        var buttonAll = document.getElementById('all');
+        var buttonGrass = document.getElementById('grass');
+        var buttonPoison = document.getElementById('poison');
+        var buttonFire = document.getElementById('fire');
+        var buttonOther = document.getElementById('other');
+
+        buttonAll.addEventListener('click', function(){
+            div.style.display = "block";
+        });
+
+        buttonGrass.addEventListener('click', function(){
+            if (item.grassType == 1){
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonPoison.addEventListener('click', function(){
+            if (item.poisonType == 1){
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonFire.addEventListener('click', function(){
+            if (item.fireType == 1){
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        });
+
+        buttonOther.addEventListener('click', function(){
+            if (item.grassType != 1 && item.poisonType != 1 && item.fireType != 1){
+                div.style.display = "block";
+            }
+            else {
+                div.style.display = "none";
+            }
+        });
+
+        // Add the HTML tags to webpage
+        div.appendChild(img);
+        div.appendChild(p);
+        pokedex.appendChild(div);
+
+        });
+    })
+    .catch(error => console.error(error));
+    </script>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        img {
+            height: 100px;
+        }
+        button:focus {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button id="all">All</button>
+    <button id="grass">Grass</button>
+    <button id="poison">Poison</button>
+    <button id="fire">Fire</button>
+    <button id="other">Other</button>
+    <div id="pokedex" class="flex-container">
+    </div>
+</body>
+</html>
