@@ -7,74 +7,74 @@
     <title>Pokedex</title>
     <script>
     // Load the JSON file named pokemon.json
-    fetch('pokemon-filter.json')
+    fetch('pokemon.json')
     .then(response => response.json())
     .then(data => {
         // Access the div element
         const pokedex = document.getElementById('pokedex');
+        const buttonAll = document.getElementById('all');
+        const buttonGrass = document.getElementById('grass');
+        const buttonFire = document.getElementById('fire');
+        const buttonOther = document.getElementById('other');
                 
         // Loop through the data and add each item to the div
         data.forEach(item => {
         const div = document.createElement('div');
-        const p = document.createElement('p');
+        const num = document.createElement('p');
+        const name = document.createElement('p');
         const img = document.createElement('img');
 
         // Set the text content and href attributes for the link
-        p.textContent = item.id + ' ' + item.pokemon;
+        // p.textContent = item.id + ' ' + item.pokemon;
+        num.textContent = item.id;
+        name.textContent = item.pokemon;
         img.src = "img/" + item.image;
 
-        // Buttons
-        var buttonAll = document.getElementById('all');
-        var buttonGrass = document.getElementById('grass');
-        var buttonPoison = document.getElementById('poison');
-        var buttonFire = document.getElementById('fire');
-        var buttonOther = document.getElementById('other');
+        /* 
+         * Onclick function
+         * whenever a image is clicked
+         * associated audio will be played
+         */
+        img.onclick = function() {
+        div.appendChild(num);
+        div.appendChild(name);
+        }
 
+        // Button to control filtering
         buttonAll.addEventListener('click', function(){
             div.style.display = "block";
         });
 
         buttonGrass.addEventListener('click', function(){
-            if (item.grassType == 1){
+            if (item.grassType == 1) {
                 div.style.display = "block";
-            }
-            else {
-                div.style.display = "none";
-            }
-        });
-
-        buttonPoison.addEventListener('click', function(){
-            if (item.poisonType == 1){
-                div.style.display = "block";
-            }
-            else {
+                div.style.backgroundColor = "green";
+            } else {
                 div.style.display = "none";
             }
         });
 
         buttonFire.addEventListener('click', function(){
-            if (item.fireType == 1){
+            if (item.fireType == 1) {
                 div.style.display = "block";
-            }
-            else {
+                div.style.backgroundColor = "red";
+            } else {
                 div.style.display = "none";
             }
         });
 
         buttonOther.addEventListener('click', function(){
-            if (item.grassType != 1 && item.poisonType != 1 && item.fireType != 1){
+            if (item.grassType != 1 && item.fireType != 1) {
                 div.style.display = "block";
-            }
-            else {
+                div.style.backgroundColor = "yellow";
+            } else {
                 div.style.display = "none";
             }
         });
-
+        
         // Add the HTML tags to webpage
-        div.appendChild(img);
-        div.appendChild(p);
+        div.appendChild(img); 
         pokedex.appendChild(div);
-
         });
     })
     .catch(error => console.error(error));
@@ -84,7 +84,7 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            align-content: flex-start;
+            align-items: start;
         }
         img {
             height: 100px;
@@ -95,11 +95,10 @@
     </style>
 </head>
 <body>
-    <button id="all">All</button>
-    <button id="grass">Grass</button>
-    <button id="poison">Poison</button>
-    <button id="fire">Fire</button>
-    <button id="other">Other</button>
+    <button id="all">ALL</button>
+    <button id="grass">GRASS</button>
+    <button id="fire">FIRE</button>
+    <button id="other">OTHER</button>
     <div id="pokedex" class="flex-container">
     </div>
 </body>
